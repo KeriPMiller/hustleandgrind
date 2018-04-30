@@ -1,0 +1,22 @@
+{
+  "name": "hustleandgrind",
+  "version": "1.0.0",
+  "description": "web app to schedule coffee chats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeriPMiller/hustleandgrind.git"
+  },
+  "keywords": [
+    "coffee"
+  ],
+  "author": "KeriPMiller <miller.keripatricia@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KeriPMiller/hustleandgrind/issues"
+  },
+  "homepage": "https://github.com/KeriPMiller/hustleandgrind#readme"
+}
