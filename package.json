@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js",
     "sync": "concurrently --kill-others \"npm install\" \"cd client && npm install\" ",
-    "duel":
-      "concurrently --kill-others \"npm run server\" \"cd client && npm start\" "
+    "duel": "concurrently --kill-others \"npm run server\" \"cd client && npm start\" "
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KeriPMiller/hustleandgrind.git"
   },
-  "keywords": ["coffee"],
+  "keywords": [
+    "coffee"
+  ],
   "author": "KeriPMiller <miller.keripatricia@gmail.com>",
   "license": "ISC",
   "bugs": {
@@ -23,11 +24,12 @@
   "homepage": "https://github.com/KeriPMiller/hustleandgrind#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "chokidar": "^2.0.3",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.4"
   }
 }
