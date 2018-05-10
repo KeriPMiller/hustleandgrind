@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import logo from "../assets/logo.svg";
 import styled from "react-emotion";
-import {Greeting, CenterDiv} from "../assets/styledComponents/";
+
+// imported Components
+import Calendar from "./Calendar";
+// imported styled components
+import { H1, CenterDiv } from "../assets/styledComponents/";
+
 // styled components
 
 const Logo = styled("img")`
   height: 80px;
 `;
 
-const Header = styled("div")`
+const Head = styled("div")`
   background-color: rgb(81, 37, 22);
   padding: 20px;
   color: papayawhip;
@@ -23,12 +28,13 @@ class App extends Component {
   render() {
     return (
       <CenterDiv>
-        <Header>
+        <Head>
           <Logo src={logo} alt="logo" />
           <Title>Hustle & Grind</Title>
-        </Header>
-        <Greeting>Hello World!</Greeting>
+        </Head>
+        <H1>Hello World!</H1>
         <p>An easier way to schedule coffee chats!</p>
+        <Calendar />
       </CenterDiv>
     );
   }

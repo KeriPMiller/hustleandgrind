@@ -27,7 +27,8 @@
     "chokidar": "^2.0.3",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "react-timeslot-calendar": "^0.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"
