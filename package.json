@@ -28,6 +28,7 @@
     "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
+    "react-day-picker": "^7.1.8",
     "react-timeslot-calendar": "^0.2.0"
   },
   "devDependencies": {
