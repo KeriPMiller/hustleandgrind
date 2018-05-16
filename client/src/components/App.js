@@ -1,20 +1,24 @@
 import React, {Component} from "react";
-
+import {css} from "emotion";
+import {FlexDiv} from "../assets/styledComponents";
 // imported Components
 import Calendar from "./Calendar";
 import Header from "./Header";
-
-// imported styled components
-import {CenterDiv} from "../assets/styledComponents/";
+import TimeSelect from "./TimeSelect";
 
 class App extends Component {
     render() {
         return (
-            <CenterDiv>
+            <div>
                 <Header/>
-                <p>An easier way to schedule coffee chats!</p>
-                <Calendar/>
-            </CenterDiv>
+                <div className={css `padding-left:1rem; display`}>
+                    <p>An easier way to schedule coffee chats!</p>
+                    <FlexDiv>
+                        <Calendar/>
+                        <TimeSelect/>
+                    </FlexDiv>
+                </div>
+            </div>
         );
     }
 }
