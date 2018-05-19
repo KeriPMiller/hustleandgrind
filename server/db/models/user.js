@@ -9,6 +9,11 @@ const User = db.define('user', {
     allowNull: false,
     isEmail: true
   },
+  username: {
+    type: STRING,
+    allowNull: false,
+    unique: true
+  },
   password: {
     type: STRING,
     allowNull: false
