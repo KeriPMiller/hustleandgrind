@@ -21,7 +21,8 @@ router.get("/:username", (req, res, next) => {
       username: req.params.username
     }
   })
-    .then(user => res.json(user));
+    .then(user => res.json(user))
+    .catch(next);
 })
 ;
 
