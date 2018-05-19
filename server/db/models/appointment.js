@@ -1,4 +1,4 @@
-const Sequelize, { STRING, DATEONLY, DATE } = require("sequelize");
+const { STRING, DATEONLY, DATE } = require("sequelize");
 const db = require("../db");
 
 const Appointment = db.define("appointment", {

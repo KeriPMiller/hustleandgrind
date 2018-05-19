@@ -1,4 +1,4 @@
-const Sequelize, { DATE, DATEONLY } = require("sequelize");
+const { DATE, DATEONLY } = require("sequelize");
 const db = require("../db");
 
 const Schedule = db.define("schedule", {
