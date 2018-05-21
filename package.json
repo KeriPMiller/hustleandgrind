@@ -25,13 +25,16 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "chokidar": "^2.0.3",
+    "compression": "^1.7.2",
     "concurrently": "^3.5.1",
+    "connect-session-sequelize": "^5.2.1",
     "crypto": "^1.0.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0",
     "pg": "6.4.1",
-    "react-day-picker": "^7.1.8",
-    "react-timeslot-calendar": "^0.2.0",
     "sequelize": "^4.37.7"
   },
   "devDependencies": {

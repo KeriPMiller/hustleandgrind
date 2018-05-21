@@ -29,10 +29,14 @@ const User = db.define("user", {
 module.exports = User;
 
 /**
+ * TODO: store emails in lowercase to make case insensitive for login.
+ */
+
+/**
  * instanceMethods
  */
 User.prototype.correctPassword = function(candidatePwd) {
-  return User.encryptPassword(candidatePwd, this.salt()) === this.password();
+  return User.encryptPassword(candidatePwd, this.salt) === this.password;
 };
 
 /**
@@ -56,7 +60,7 @@ User.encryptPassword = function(plainText, salt) {
 const setSaltAndPassword = user => {
   if (user.changed("password")) {
     user.salt = User.generateSalt();
-    user.password = User.encryptPassword(user.password(), user.salt());
+    user.password = User.encryptPassword(user.password, user.salt);
   }
 };
 

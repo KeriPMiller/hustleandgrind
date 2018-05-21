@@ -103,3 +103,7 @@ package-lock.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Security #
+############
+secret.js
