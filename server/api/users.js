@@ -19,19 +19,13 @@ router.get("/:username", (req, res, next) => {
   User.findAll({
     where: {
       username: req.params.username
-    }
+    },
+    attributes: ["id", "email", "username"]
   })
     .then(user => res.json(user))
     .catch(next);
 })
 ;
-
-// // POST a user
-// router.post("/", (req, res) => {
-//   User.create(req.body)
-//     .then(newUser => res.status(201).json(newUser))
-//     .catch(err => console.error(err));
-// });
 
 // PUT user
 router.put("/:userId", (req, res, next) => {

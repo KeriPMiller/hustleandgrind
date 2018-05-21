@@ -1,17 +1,26 @@
 const router = require("express").Router();
-const { Appointment } = require("../db/models");
+const { Appointment, Schedule, User } = require("../db/models");
 module.exports = router;
 
 // GET all appointments
 router.get("/", (req, res, next) => {
-  Appointment.findAll()
+  Appointment.findAll({
+    include:{
+      model: User, as: 'user',
+      attributes: ["id", "email", "username"]
+    }
+  })
     .then(appointment => res.json(appointment))
     .catch(next);
 });
 
 // GET appointment by id
 router.get("/:appointmentId", (req, res, next) => {
-  Appointment.findById(+req.params.appointmentId)
+  Appointment.findById(+req.params.appointmentId, {
+    include: {
+      model: Schedule, as: "details"
+    }
+  })
     .then(appointment => res.json(appointment))
     .catch(next);
 });

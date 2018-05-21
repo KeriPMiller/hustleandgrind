@@ -10,6 +10,14 @@ const Location = db.define("location", {
     type: STRING,
     allowNull: false
   },
+  city: {
+    type: STRING,
+    allowNull: false
+  },
+  state: {
+    type: STRING,
+    allowNull: false
+  },
   zipcode: {
     type: STRING,
     allowNull: false

@@ -7,10 +7,11 @@ module.exports = router;
  */
 //Logs user in and sets them to currentUser on the state
 router.post("/login", (req, res, next) => {
+  let lowerEmail = req.body.email.toLowerCase();
   User.findOne({
     where:
-      { email: req.body.email }
-    })
+      { email: lowerEmail }
+  })
     .then(user => {
       if (!user) {
         res.status(401).send("User not found");

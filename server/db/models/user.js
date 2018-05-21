@@ -24,13 +24,16 @@ const User = db.define("user", {
   googleId: {
     type: STRING
   }
+}, {
+  setterMethods: {
+    email: function(value) {
+      let lowerE = value.toLowerCase();
+      this.setDataValue("email", lowerE);
+    }
+  }
 });
 
 module.exports = User;
-
-/**
- * TODO: store emails in lowercase to make case insensitive for login.
- */
 
 /**
  * instanceMethods

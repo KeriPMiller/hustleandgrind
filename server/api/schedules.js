@@ -1,10 +1,15 @@
 const router = require("express").Router();
-const { Schedule } = require("../db/models");
+const { Schedule, User } = require("../db/models");
 module.exports = router;
 
 // GET all schedules
 router.get("/", (req, res, next) => {
-  Schedule.findAll()
+  Schedule.findAll({
+    include: {
+      model: User, as: "user",
+      attributes: ["id", "email", "username"]
+    }
+  })
     .then(schedules => res.json(schedules))
     .catch(next);
 });

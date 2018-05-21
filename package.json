@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/server.js",
     "sync": "concurrently --kill-others \"npm install\" \"cd client && npm install\" ",
-    "duel": "concurrently --kill-others \"npm run server\" \"cd client && npm start\" "
+    "duel": "concurrently --kill-others \"npm run server\" \"cd client && npm start\" ",
+    "seed": "node ./seed"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "crypto": "^1.0.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "moment": "^2.22.1",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-google-oauth": "^1.0.0",
