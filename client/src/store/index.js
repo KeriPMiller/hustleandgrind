@@ -6,9 +6,9 @@ import {
 import { createLogger } from "redux-logger";
 import { default as thunkMiddleware } from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-// import user from './user'
+import user from "./user";
 
-const reducer = combineReducers({});
+const reducer = combineReducers({ user });
 
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
@@ -32,6 +32,6 @@ const store = createStore(rootReducer, persistedState, middleware);
 store.subscribe(() => localStorage.setItem("store", JSON.stringify(store.getState())));
 
 
-//export * from './users';
+export * from './user';
 
 export default store;

@@ -2,9 +2,7 @@ const router = require("express").Router();
 const User = require("../db/models/user");
 module.exports = router;
 
-/**
- * TODO: store emails in lowercase to make case insensitive for login.
- */
+
 //Logs user in and sets them to currentUser on the state
 router.post("/login", (req, res, next) => {
   let lowerEmail = req.body.email.toLowerCase();

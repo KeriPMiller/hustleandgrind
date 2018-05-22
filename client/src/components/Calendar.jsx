@@ -35,7 +35,7 @@ class Calendar extends Component {
                     Today is <Span color={"lawngreen"}>{today}</Span>
                 </H1>
                 <DayPicker
-                    onDayClick={this.handleDayClick}
+                  onDayClick={this.handleDayClick}
                     selectedDays={this.state.selectedDay}
                     modifiers={weekends}
                 />
