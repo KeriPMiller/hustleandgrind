@@ -32,6 +32,7 @@ class Routes extends Component {
             {
               isLoggedIn &&
               <Switch>
+                <Route exact path="/calendar/" component={ProfileConsole}/>
                 {/* Routes placed here are only available after logging in */}
                 {/*<Route path="/home" component={UserHome}/>*/}
               </Switch>

@@ -2,7 +2,7 @@ import React from "react";
 import {css} from "emotion";
 import {Span} from "../assets/styledComponents";
 
-const TimeSlot = () => {
+const TimeSlot = (props) => {
     return (
         <div className={css`
             background-color: #a57147;
@@ -10,7 +10,7 @@ const TimeSlot = () => {
             margin: .2rem;
             padding: .3rem;
             text-align:center;`}>
-            <Span color='BurlyWood'> 12:PM</Span>
+            <Span color='BurlyWood'>{props.time}</Span>
         </div>
     )
 }
