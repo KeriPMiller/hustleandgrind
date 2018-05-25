@@ -85,4 +85,57 @@ describe("Location API routes", () => {
         expect(res.body).to.have.lengthOf(2);
       });
   });
+
+  it("GET /api/locations/:locationId gets location by id", () => {
+    return request(app)
+      .get(`/api/locations/${cafeId2}`)
+      .expect(200)
+      .then(res => {
+        expect(res.body.name).to.be.equal(name2);
+        expect(res.body.address).to.be.equal(addr2);
+        expect(res.body.city).to.be.equal(city2);
+        expect(res.body.state).to.be.equal(state2);
+        expect(res.body.zipcode).to.be.equal(zipcode2);
+      });
+  });
+
+  it("POST /api/locations/ it can post new locations", () => {
+    return request(app)
+      .post("/api/locations")
+      .send({
+        name: "Monk's Cafe",
+        address: "2880 Broadway Avenue",
+        city: "New York",
+        state: "NY",
+        zipcode: "10028"
+      })
+      .expect(201)
+      .then(res => {
+        const newCafe = res.body;
+        return Location.findById(newCafe.id);
+      })
+      .then(foundLocation => {
+        expect(foundLocation.name).to.be.equal("Monk's Cafe");
+      });
+  });
+  // PUT and DELETE are not working properly
+
+  it("PUT /api/locations/:locationId it can update a location", () => {
+    return request(app)
+      .put(`/api/locations/${cafeId1}`)
+      .send({
+        name: "Rue La Rue Cafe"
+      })
+      .expect(202)
+      .end(res => {
+        res.body.should.have.property("UPDATED");
+        res.body.UPDATED.name.should.equal("Rue La Rue Cafe");
+      });
+  });
+
+  it("DELETE /api/locations/:locationId it can delete a location", () => {
+    return request(app)
+      .delete(`/api/locations/1`)
+      .expect(204);
+  });
 });
