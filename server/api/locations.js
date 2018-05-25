@@ -34,12 +34,8 @@ router.put("/:locationId", (req, res, next) => {
 // DELETE location
 router.delete("/:locationId", (req, res, next) => {
   Location.destroy({
-    where: {
-      id: {
-        id: req.params.locationId
-      }
-    }
+    where: { id: +req.params.locationId }
   })
-    .then(() => res.sendStatus(204))
+    .then(() => res.sendStatus(204).end())
     .catch(next);
 });
