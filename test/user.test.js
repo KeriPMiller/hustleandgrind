@@ -110,7 +110,7 @@ describe("User Model", () => {
         .then(res => {
           expect(res.status).to.be.equal(202);
           expect(res.body.email).to.equal("catzlady@hotmail.com");
-        })
+        });
     });
 
     it("DELETE /api/users/:userId it can delete a user", () => {
