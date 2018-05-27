@@ -126,10 +126,9 @@ describe("Location API routes", () => {
       .send({
         name: "Rue La Rue Cafe"
       })
-      .expect(202)
-      .end(res => {
-        res.body.should.have.property("UPDATED");
-        res.body.UPDATED.name.should.equal("Rue La Rue Cafe");
+      .then(res => {
+        expect(res.status).to.be.equal(202);
+        expect(res.body.name).to.be.equal("Rue La Rue Cafe");
       });
   });
 
