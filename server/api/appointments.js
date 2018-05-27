@@ -36,7 +36,7 @@ router.post("/", (req, res) => {
 router.put("/:appointmentId", (req, res, next) => {
   Appointment.findById(+req.params.appointmentId)
     .then(appointment => appointment.update(req.body))
-    .then(res.sendStatus(202))
+    .then(updatedApp => res.status(202).json(updatedApp))
     .catch(next);
 });
 

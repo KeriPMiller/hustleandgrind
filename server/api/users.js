@@ -16,7 +16,7 @@ router.get("/", (req, res, next) => {
 
 // GET user by unique username
 router.get("/:username", (req, res, next) => {
-  User.findAll({
+  User.findOne({
     where: {
       username: req.params.username
     },
@@ -31,19 +31,15 @@ router.get("/:username", (req, res, next) => {
 router.put("/:userId", (req, res, next) => {
   User.findById(+req.params.userId)
     .then(user => user.update(req.body))
-    .then(res.sendStatus(202))
+    .then(updatedUser => res.status(202).json(updatedUser))
     .catch(next);
 });
 
 // DELETE user
 router.delete("/:userId", (req, res, next) => {
   User.destroy({
-    where: {
-      id: {
-        id: req.params.userId
-      }
-    }
+    where: { id: +req.params.userId }
   })
-    .then(() => res.sendStatus(204))
+    .then(() => res.sendStatus(204).end())
     .catch(next);
 });

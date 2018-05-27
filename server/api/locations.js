@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
 router.put("/:locationId", (req, res, next) => {
   Location.findById(+req.params.locationId)
     .then(location => location.update(req.body))
-    .then(res.sendStatus(202))
+    .then(updatedLoc => res.status(202).json(updatedLoc))
     .catch(next);
 });
 
@@ -36,6 +36,6 @@ router.delete("/:locationId", (req, res, next) => {
   Location.destroy({
     where: { id: +req.params.locationId }
   })
-    .then(() => res.sendStatus(204).end())
+    .then(() => res.sendStatus(204))
     .catch(next);
 });

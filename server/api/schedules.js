@@ -32,7 +32,7 @@ router.post("/", (req, res) => {
 router.put("/:scheduleId", (req, res, next) => {
   Schedule.findById(+req.params.scheduleId)
     .then(schedule => schedule.update(req.body))
-    .then(res.sendStatus(202))
+    .then(updatedSch => res.status(202).json(updatedSch))
     .catch(next);
 });
 
